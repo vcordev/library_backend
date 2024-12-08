@@ -111,5 +111,5 @@ Use ferramentas como Postman ou navegador para testar os endpoints.
    Descrição: Gera relatórios com estatísticas sobre os empréstimos e os livros mais populares.
 
 ## Autor
-Veaceslav Corotnean
-Contato: veaceslav.finance@gmail.com
+Veaceslav Corotnean  
+Contato: vcorotnean.dev@gmail.com
