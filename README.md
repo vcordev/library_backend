@@ -110,7 +110,7 @@ Use ferramentas como Postman ou navegador para testar os endpoints.
    Método: GET
    Descrição: Gera relatórios com estatísticas sobre os empréstimos e os livros mais populares.
 
-## Autor
+## Autores
 Veaceslav Corotnean - 202427015@uatla.pt
 Renato Almeida - 202427065@uatla.pt
 Beatriz Cansado - 202327095@uatla.pt
