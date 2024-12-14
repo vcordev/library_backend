@@ -1,0 +1,242 @@
+/* Configuração Global */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: white; /* Fundo branco */
+    color: black; /* Texto em preto */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header .logo img {
+    height: auto; /* Permite ajustar a altura proporcionalmente */
+    max-height: 100px; /* Define um limite máximo para a altura */
+    max-width: 260px; /* Limita a largura máxima */
+    margin-right: 15px; /* Espaçamento entre o logotipo e o título */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav button {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #001f40;
+}
+
+/* Corpo Principal */
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #002A5E;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Cartões e Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: #004080;
+    margin: 0 0 10px 0;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+/* Botões Gerais */
+.card button {
+    margin-top: 10px;
+    margin-right: 5px;
+    padding: 8px 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Botão Emprestar */
+.emprestar-btn {
+    background-color: #28a745; /* Verde Suave */
+}
+
+.emprestar-btn:hover {
+    background-color: #218838; /* Verde mais escuro */
+}
+
+/* Botão Apagar */
+.apagar-btn {
+    background-color: #d9534f; /* Vermelho */
+}
+
+.apagar-btn:hover {
+    background-color: #c9302c; /* Vermelho mais escuro */
+}
+
+/* Botão Atualizar Quantidade */
+.atualizar-btn {
+    background-color: #f0ad4e; /* Laranja Suave */
+}
+
+.atualizar-btn:hover {
+    background-color: #ec971f; /* Laranja mais escuro */
+}
+
+/* Botão Devolver */
+.devolver-btn {
+    background-color: #004080; /* Azul Principal */
+}
+
+.devolver-btn:hover {
+    background-color: #001f40; /* Azul mais escuro */
+}
+
+/* Barra de Pesquisa */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.search-bar button {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #001f40;
+}
+
+/* Rodapé */
+footer {
+    background-color: #002A5E;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none !important; /* Garante que secções escondidas não sejam exibidas */
+}
+
+/* Form-row: Estilo das caixas de texto lado a lado */
+.form-row {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os campos */
+}
+
+.form-row input {
+    flex: 1; /* Faz com que os campos ocupem o mesmo espaço */
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #001f40;
+}
+
+/* Botões de ação na barra de pesquisa */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header .search-bar {
+    margin: 0;
+    flex-grow: 0;
+}
+
+.section-header h2 {
+    margin: 0;
+}

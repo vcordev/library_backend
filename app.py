@@ -1,19 +1,20 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
+from models import db
+from routes import app_routes
 
-# Inicializa o app Flask
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:admin@localhost/library'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Configuração do Banco de Dados MySQL
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:admin@localhost/library'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    db.init_app(app)
+    CORS(app)
+    app.register_blueprint(app_routes)
 
-# Inicializa o SQLAlchemy
-db = SQLAlchemy(app)
+    return app
 
-# Importa as rotas
-from routes import *
-
-# Inicia o servidor
-if __name__ == '__main__':
+if __name__ == "__main__":
+    app = create_app()
+    print("A iniciar o servidor Flask...")
     app.run(debug=True)
