@@ -1,6 +1,6 @@
 # Sistema de Biblioteca
 
-Este projeto é um sistema de biblioteca simples que permite gerenciar livros, usuários e empréstimos.
+Este projeto é um sistema de biblioteca simples que permite gerenciar livros, utilizadores e empréstimos.
 
 ## Recursos
 
@@ -11,13 +11,13 @@ Este projeto é um sistema de biblioteca simples que permite gerenciar livros, u
   - Emprestar e devolver livros.
   - Pesquisa de livros por título ou autor.
 
-- Gerenciamento de **Usuários**:
-  - Adicionar novos usuários com nome e email.
+- Gerenciamento de **Utilizadores**:
+  - Adicionar novos utilizadores com nome e e-mail.
   - Excluir usuários existentes.
   - Pesquisa de usuários por nome.
 
 - **Empréstimos**:
-  - Realizar empréstimos de livros a usuários.
+  - Realizar empréstimos de livros a utilizadores.
   - Registrar devoluções de livros.
   - Pesquisa de empréstimos por informações do livro ou usuário.
 
@@ -43,7 +43,7 @@ Este projeto é um sistema de biblioteca simples que permite gerenciar livros, u
    ```
    **Nota**: Substitua `seu_usuario` pelo nome do usuário do MySQL.
 
-3. Configure a string de conexão no arquivo de configuração (`config.py` ou similar):
+3. Configure a string de conexão no ficheiro de configuração (`config.py` ou similar):
    ```python
    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://usuario:senha@localhost/library'
    ```
