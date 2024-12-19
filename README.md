@@ -1,116 +1,120 @@
 # Sistema de Biblioteca
 
 ## Descrição
-Este é um sistema simples de gerenciamento de bibliotecas desenvolvido em Flask, permitindo:
-- Listar livros disponíveis.
-- Realizar e devolver empréstimos.
-- Consultar o histórico de empréstimos de um usuário.
-- Obter recomendações de livros para usuários.
-- Buscar livros pelo título ou autor.
-- Gerar relatórios de empréstimos e livros mais populares.
 
-## Requisitos
-Antes de iniciar, certifique-se de que você possui os seguintes itens instalados:
-- **Python 3.7+**
-- **Flask**
-- **Flask-SQLAlchemy**
-- **MySQL** (com MySQL Workbench, opcional)
+Este projeto é um sistema simples para gestão de bibliotecas, desenvolvido com Python (Flask) no backend e HTML, CSS e JavaScript no frontend. O sistema permite:
 
-### Instale as Dependências
-1. Use o gerenciador de pacotes `pip` para instalar as dependências do projeto:
-   pip install flask flask-sqlalchemy pymysql
-   Certifique-se de que o banco de dados MySQL está configurado e rodando.
+- Gerir livros, incluindo adição, pesquisa, edição e remoção.
+- Gerir utilizadores, com registo e eliminação.
+- Controlar empréstimos de livros.
 
-### Configuração do Banco de Dados
-Crie um banco de dados MySQL chamado `library`:
-   CREATE DATABASE library;
+Os dados são armazenados numa base de dados SQL, e a comunicação entre o frontend e o backend é feita via rotas RESTful.
 
-Configure as tabelas com o seguinte esquema:
-   CREATE TABLE books (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       title VARCHAR(255),
-       author VARCHAR(255),
-       available BOOLEAN
-   );
+---
 
-   CREATE TABLE users (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       name VARCHAR(255),
-       email VARCHAR(255)
-   );
+## Funcionalidades Principais
 
-   CREATE TABLE loans (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       user_id INT,
-       book_id INT,
-       loan_date DATE,
-       return_date DATE
-   );
+- **Gestão de Livros**: 
+  - Adicionar novos livros com título, autor e quantidade.
+  - Atualizar a quantidade de exemplares.
+  - Remover livros do sistema.
+  - Pesquisar livros por título ou autor.
 
-## Como Executar
-Clone este repositório:
-   git clone <link-do-repositorio>
-   cd library_backend
+- **Gestão de Utilizadores**: 
+  - Registar novos utilizadores com nome e email.
+  - Remover utilizadores.
 
-Inicie o servidor Flask:
-   python app.py
+- **Empréstimos**: 
+  - Realizar empréstimos.
+  - Registar devoluções.
 
-O servidor estará disponível em http://127.0.0.1:5000/.
+---
 
-Use ferramentas como Postman ou navegador para testar os endpoints.
+## Como Executar o Sistema
 
-## Endpoints
-1. Listar Livros
-   URL: /books
-   Método: GET
-   Descrição: Lista todos os livros da biblioteca.
+### Requisitos
 
-2. Realizar Empréstimo
-   URL: /borrow
-   Método: POST
-   Body (JSON):
-   {
-       "user_id": 1,
-       "book_id": 2
-   }
-   Descrição: Realiza um empréstimo de um livro para um usuário.
+Certifique-se de que tem os seguintes componentes instalados:
 
-3. Devolver Livro
-   URL: /return
-   Método: PUT
-   Body (JSON):
-   {
-       "loan_id": 1
-   }
-   Descrição: Processa a devolução de um livro.
+- Python 3.8+
+- Flask (instalado via pip)
+- Navegador web atualizado
 
-4. Recomendações de Livros
-   URL: /recommendations
-   Método: GET
-   Parâmetros:
-   user_id: ID do usuário (obrigatório).
-   Descrição: Retorna recomendações de livros que o usuário ainda não leu.
+### Configuração e Execução
 
-5. Histórico de Empréstimos
-   URL: /history
-   Método: GET
-   Parâmetros:
-   user_id: ID do usuário (obrigatório).
-   Descrição: Retorna o histórico de empréstimos de um usuário.
+1. **Backend**:
+   - Abra o terminal e navegue até à pasta onde o ficheiro `app.py` está localizado:
 
-6. Busca Avançada
-   URL: /search
-   Método: GET
-   Parâmetros:
-   query: Termo para buscar no título ou autor (obrigatório).
-   Descrição: Busca livros pelo título ou autor.
+     ```bash
+     cd caminho/para/o/diretorio/library_backend
+     ```
+   - Execute o servidor Flask:
 
-7. Relatórios
-   URL: /reports
-   Método: GET
-   Descrição: Gera relatórios com estatísticas sobre os empréstimos e os livros mais populares.
+     ```bash
+     python app.py
+     ```
+
+   - O servidor estará disponível no endereço:
+
+     ```plaintext
+     http://127.0.0.1:5000
+     ```
+
+2. **Frontend**:
+   - Abra o ficheiro `index.html` localizado na pasta do frontend directamente no navegador para interagir com o sistema.
+
+---
+
+## Estrutura do Projeto
+
+```plaintext
+library/
+├── backend/
+│   ├── app.py          # Configuração e inicialização do servidor Flask
+│   ├── models.py       # Definições dos modelos da base de dados
+│   ├── routes.py       # Rotas RESTful para os recursos
+│   └── library.sql     # Esquema e dados iniciais da base de dados
+├── frontend/
+│   ├── index.html      # Interface principal
+│   ├── styles.css      # Estilos visuais
+│   ├── scripts.js      # Lógica do frontend
+└── README.md           # Documentação do projeto
+```
+
+---
+
+## Rotas RESTful Disponíveis
+
+### Livros
+
+- `GET /books` - Lista todos os livros.
+- `GET /search?query=<termo>` - Pesquisa livros por título ou autor.
+- `POST /add_book` - Adiciona um novo livro.
+- `PUT /update_book_quantity/<book_id>` - Atualiza a quantidade de um livro.
+- `DELETE /delete_book/<book_id>` - Remove um livro.
+
+### Utilizadores
+
+- `GET /users` - Lista todos os utilizadores.
+- `POST /add_user` - Regista um novo utilizador.
+- `DELETE /delete_user/<user_id>` - Remove um utilizador.
+
+### Empréstimos
+
+- `POST /borrow` - Regista um novo empréstimo.
+- `PUT /return` - Regista a devolução de um livro.
+- `GET /loans` - Lista todos os empréstimos pendentes.
+
+---
+
+## Licença
+
+Este projeto é de uso educacional. Consulte os autores para mais informações.
+
+---
 
 ## Autores
-Veaceslav Corotnean - 202427015@uatla.pt
-Renato Almeida - 202427065@uatla.pt
-Beatriz Cansado - 202327095@uatla.pt
+
+- Veaceslav Corotnean - 202427015@uatla.pt
+- Renato Almeida - 202427065@uatla.pt
+- Beatriz Cansado - 202327095@uatla.pt
