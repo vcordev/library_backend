@@ -61,7 +61,7 @@ Certifique-se de que tem os seguintes componentes instalados:
      ```
 
 2. **Frontend**:
-   - Abra o ficheiro `index.html` localizado na pasta do frontend directamente no navegador para interagir com o sistema.
+   - Abra o ficheiro `index.html` localizado na pasta do frontend diretamente no navegador para interagir com o sistema.
 
 ---
 
@@ -75,9 +75,9 @@ library/
 │   ├── routes.py       # Rotas RESTful para os recursos
 │   └── library.sql     # Esquema e dados iniciais da base de dados
 ├── frontend/
-│   ├── index.html      # Interface principal
-│   ├── styles.css      # Estilos visuais
-│   ├── scripts.js      # Lógica do frontend
+│   ├── index.html      # Página principal do frontend
+│   ├── styles.css      # Estilos CSS
+│   ├── scripts.js      # Lógica do JavaScript
 └── README.md           # Documentação do projeto
 ```
 
