@@ -38,6 +38,7 @@ Certifique-se de que tem os seguintes componentes instalados:
 
 - Python 3.8+
 - Flask (instalado via pip)
+- PyMySQL (instalado via pip)
 - Navegador web atualizado
 
 ### Configuração e Execução
@@ -48,6 +49,12 @@ Certifique-se de que tem os seguintes componentes instalados:
      ```bash
      cd caminho/para/o/diretorio/library_backend
      ```
+   - Instale a dependência PyMySQL:
+
+     ```bash
+     pip install pymysql
+     ```
+
    - Execute o servidor Flask:
 
      ```bash
@@ -118,3 +125,4 @@ Este projeto é de uso educacional. Consulte os autores para mais informações.
 - Veaceslav Corotnean - 202427015@uatla.pt
 - Renato Almeida - 202427065@uatla.pt
 - Beatriz Cansado - 202327095@uatla.pt
+
